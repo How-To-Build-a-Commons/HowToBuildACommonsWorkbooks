@@ -43,6 +43,7 @@
 % --- Add corner image depending on odd/even page ---
 \newcommand{\AddCornerImage}{%
 	\AddToShipoutPictureBG{%
+	\ifnum\value{page}>1 % Only add corners if page number > 1
 		% === Bottom Corner ===
 		\AtPageLowerLeft{%
 			\ifodd\value{page}
@@ -71,6 +72,7 @@
 			}%
 			\fi
 		}%
+		\fi % End of page number check
 	}%
 }
 
@@ -97,12 +99,26 @@
 
 \fontsize{8}{9}\selectfont
 	
-\vspace*{\fill}	
-{\centering \huge \textbf{Building A Common}\par}
+% Add background image
+\AddToShipoutPictureBG*{%
+	\AtPageLowerLeft{%
+		\includegraphics[width=\paperwidth,height=\paperheight]{src/how-to-consensus-zine/border-edited.png}%
+	}%
+}
+
+\vspace*{\fill}
+{\centering 
+	\huge \textbf{Building A Common}\par
+	\vspace{1em} % Space between title and subtitle
+	\Large A Declaration of Independence 
+	
+	From Capitalism\par % Add your subtitle
+}
 \vspace*{\fill}
 
-\thispagestyle{empty} % put this right after \begin{document} or after your title page
-	
+\thispagestyle{empty}
+
+
 \pagebreak
 
 \vspace{1cm}
