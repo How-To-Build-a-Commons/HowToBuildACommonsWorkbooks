@@ -47,7 +47,7 @@ jobs:
         run: pdflatex -jobname=HowToBuildACommons-${{ github.ref_name }} ScopeSequencing.tex
         
       - name: Generate Checkbook
-        run: pdflatex -jobname=MakerCheckBook-${{ github.ref_name }} ScopeSequencing.tex 
+        run: pdflatex -jobname=MakerCheckBook-${{ github.ref_name }} MakerCheckBook.tex 
         
       - name: Generate Folding PDF
         run: pdflatex  ConsensusPocketReference.tex
