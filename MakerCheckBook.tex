@@ -1,0 +1,83 @@
+\documentclass{article}
+\usepackage{helvet}
+\renewcommand{\familydefault}{\sfdefault}
+\usepackage{enumitem,amssymb}
+\usepackage{lipsum} % for filler text
+\usepackage{geometry}
+\geometry{
+	paperwidth=8.5in,
+	paperheight=11in,
+	top=0.25in,
+	bottom=0.5in,
+	left=0.25in,
+	right=0.2in,
+	footskip=20pt  % Reserve space for footer
+}
+\usepackage{qrcode}
+\newlist{todolist}{itemize}{2}
+\setlist[todolist]{label=$\square$}
+\usepackage{easylist}
+\usepackage{fancyhdr}
+
+\fancyfoot{} % clear all footer fields
+
+
+\usepackage{hyperref}
+\usepackage{tikz}
+\usepackage{rotating}
+\usepackage{dashbox}
+\usepackage{graphicx}
+\usepackage{eso-pic} % allows background placement
+\pagestyle{fancy}
+\usepackage{sectsty}
+\sectionfont{\centering}
+
+% Set the value
+\newlength{\mylen}
+\setlength{\mylen}{0.25in}
+\usepackage{lmodern}
+\usepackage{tikz}
+
+\usepackage{multicol}
+
+
+\usepackage{ifthen}
+
+\usepackage{atbegshi}
+\usetikzlibrary{calc}
+
+\input{MakerCheck.tex}%
+\begin{document}
+	
+	\vspace{1cm}
+	
+\begin{turn}{-90}
+	\centering
+	\makercheck
+\end{turn}
+
+\vspace{1cm}
+
+\begin{turn}{-90}
+	\centering
+	\makercheck
+\end{turn}
+
+\vspace{1cm}
+
+\begin{turn}{-90}
+	\centering
+	\makercheck
+\end{turn}
+
+\vspace{1cm}
+
+\begin{turn}{-90}
+	\centering
+	\makercheck
+\end{turn}
+	\pagebreak
+
+	\verticallines	
+	
+\end{document}
