@@ -1,5 +1,6 @@
 \documentclass{article}
 \usepackage{geometry}
+\usepackage{eso-pic} % allows background placement
 \geometry{
 	paperwidth=2.75in,
 	paperheight=4.25in,
@@ -78,15 +79,29 @@
 	\thispagestyle{empty} 
 	
 	\newpage
-	{\centering \huge \textbf{Intro to Achieving       Consensus}\par}
 	
+	% Add background image
+	\AddToShipoutPictureBG*{%
+		\AtPageLowerLeft{%
+			\includegraphics[width=\paperwidth,height=\paperheight]{src/how-to-consensus-zine/border-edited.png}%
+		}%
+	}
 	
-	Consensus Decision Making (CDM) 
+	\vspace*{\fill}
+	{\centering 
+		\huge \textbf{Intro to Achieving       Consensus}\par
+		\vspace{1em} % Space between title and subtitle
+		{\fontsize{9}{11}\selectfont
+			Consensus Decision Making (CDM) 
+			
+			Intro and Reference
+			
+			"The commons are those things     that we all own together, that are neither privately owned,nor managed by the government"\par % Add your subtitle
+		}
+	}
+	\vspace*{\fill}
 	
-	Intro and Reference
-	
-	"The commons are those things     that we all own together, that are neither privately owned,nor managed by the government"
-	
+
 	 \thispagestyle{empty} 
 	 
 \end{document}
