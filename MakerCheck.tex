@@ -1,0 +1,59 @@
+
+\newcommand{\linedpagetwo}{%
+	\noindent
+	\foreach \n in {1,...,15}{%
+		\rule{\textwidth}{0.4pt}\\[\baselineskip]
+	}
+}
+
+\newcommand{\verticallines}{%
+	\noindent%
+	\begin{tikzpicture}[remember picture, overlay]
+		\coordinate (TL) at (current page.north west);
+		\coordinate (BR) at (current page.south east);
+		\pgfmathsetmacro{\spacing}{0.8} % 8mm spacing in cm
+		\pgfmathsetmacro{\pagewidth}{8.5*2.54} % 8.5 inches converted to cm
+		\pgfmathsetmacro{\nlines}{int(\pagewidth/\spacing)}
+		\foreach \i in {0,1,...,\nlines}{
+			\draw[gray] ([xshift=\i*\spacing cm]TL) -- ([xshift=\i*\spacing cm]current page.south west);
+		}
+	\end{tikzpicture}%
+}
+\newcommand{\makercheck}{
+
+\begin{turn}{90}
+	\dbox{%
+		\begin{minipage}[t][2in]{6.7in}
+			\begin{minipage}[t][0.4in]{\textwidth}
+				\vfill
+				I \rule{2in}{1pt} promise to work for \rule{0.5in}{1pt} hours and \rule{0.5in}{1pt} minutes. 
+			\end{minipage}%
+			\noindent
+			
+			\begin{minipage}[t][1.5in]{0.7\textwidth}
+				\vfill
+				\makebox[0.8in][l]{Signed On:} \shortstack{\small Year\\[0.4cm]\rule{0.5in}{0.4pt}} / \shortstack{\small Month\\[0.4cm]\rule{0.5in}{0.4pt}} / \shortstack{\small Day\\[0.4cm]\rule{0.5in}{0.4pt}}
+				
+				\makebox[0.8in][l]{Expires On:} \shortstack{\small Year\\[0.4cm]\rule{0.5in}{0.4pt}} / \shortstack{\small Month\\[0.4cm]\rule{0.5in}{0.4pt}} / \shortstack{\small Day\\[0.4cm]\rule{0.5in}{0.4pt}}
+				
+				\makebox[0.8in][l]{Done On:} \shortstack{\small Year\\[0.4cm]\rule{0.5in}{0.4pt}} / \shortstack{\small Month\\[0.4cm]\rule{0.5in}{0.4pt}} / \shortstack{\small Day\\[0.4cm]\rule{0.5in}{0.4pt}}
+			\end{minipage}%
+			\hfill
+			\begin{minipage}[t][1.5in]{0.4\textwidth}
+				\vfill
+				\shortstack{\small Notes / Type of Work\\[0.6cm]\rule{1.5in}{0.4pt}}
+				\shortstack{\small Signature\\[0.6cm]\rule{1.5in}{0.4pt}}
+				\vspace{0.2cm}
+			\end{minipage}
+			
+			% --- Add this block at the end of the minipage ---
+			\vspace{0pt}
+			\hfill
+			\raisebox{0pt}[0pt][0pt]{%
+				\includegraphics[width=1.2cm]{CornerDetail.png}%
+			}%
+		\end{minipage}%
+	}
+\end{turn}
+
+}

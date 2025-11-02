@@ -46,6 +46,9 @@ jobs:
       - name: Generate PDF
         run: pdflatex -jobname=HowToBuildACommons-${{ github.ref_name }} ScopeSequencing.tex
         
+      - name: Generate Checkbook
+        run: pdflatex -jobname=MakerCheckBook-${{ github.ref_name }} MakerCheckBook.tex 
+        
       - name: Generate Folding PDF
         run: pdflatex  ConsensusPocketReference.tex
         
@@ -61,7 +64,7 @@ jobs:
       - name: Create or Update Release
         uses: softprops/action-gh-release@v1
         with:
-          files: Consensus-Pocket-Booklet-${{ github.ref_name }}.pdf,HowToBuildACommons-${{ github.ref_name }}.pdf,HowToBuildACommons-${{ github.ref_name }}-booklet.pdf,how-to-consensus-zine.svg
+          files: MakerCheckBook-${{ github.ref_name }}.pdf,Consensus-Pocket-Booklet-${{ github.ref_name }}.pdf,HowToBuildACommons-${{ github.ref_name }}.pdf,HowToBuildACommons-${{ github.ref_name }}-booklet.pdf,how-to-consensus-zine.svg
           draft: false
           prerelease: false
           name: ${{ github.ref_name }}
