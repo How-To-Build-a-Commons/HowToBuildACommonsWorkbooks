@@ -8,10 +8,9 @@
 	paperwidth=8.5in,
 	paperheight=11in,
 	top=0.25in,
-	bottom=0.5in,
+	bottom=0.25in,
 	left=0.25in,
-	right=0.2in,
-	footskip=20pt  % Reserve space for footer
+	right=0.25in
 }
 \usepackage{qrcode}
 \newlist{todolist}{itemize}{2}
@@ -48,34 +47,34 @@
 
 \input{MakerCheck.tex}%
 \begin{document}
-	
-	\vspace{1cm}
-	
-\begin{turn}{-90}
-	\centering
-	\makercheck
-\end{turn}
-
-\vspace{1cm}
-
-\begin{turn}{-90}
-	\centering
-	\makercheck
-\end{turn}
-
-\vspace{1cm}
-
-\begin{turn}{-90}
-	\centering
-	\makercheck
-\end{turn}
-
-\vspace{1cm}
-
-\begin{turn}{-90}
-	\centering
-	\makercheck
-\end{turn}
+	\begin{center}
+			
+		\begin{turn}{-90}
+			\centering
+			\makercheck
+		\end{turn}
+		
+		\vfill
+		
+		\begin{turn}{-90}
+			\centering
+			\makercheck
+		\end{turn}
+		
+		\vfill
+		
+		\begin{turn}{-90}
+			\centering
+			\makercheck
+		\end{turn}
+		
+		\vfill
+		
+		\begin{turn}{-90}
+			\centering
+			\makercheck
+		\end{turn}
+	\end{center}
 	\pagebreak
 
 	\verticallines	
