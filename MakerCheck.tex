@@ -7,18 +7,21 @@
 }
 
 \newcommand{\verticallines}{%
+	\vspace*{-1in}% Move to top of physical page
+	\vspace*{-\topmargin}%
+	\vspace*{-\headheight}%
+	\vspace*{-\headsep}%
 	\noindent%
-	\begin{tikzpicture}[remember picture, overlay]
-		\coordinate (TL) at (current page.north west);
-		\coordinate (BR) at (current page.south east);
-		\pgfmathsetmacro{\spacing}{0.8} % 8mm spacing in cm
-		\pgfmathsetmacro{\pagewidth}{8.5*2.54} % 8.5 inches converted to cm
-		\pgfmathsetmacro{\nlines}{int(\pagewidth/\spacing)}
+	\begin{tikzpicture}[overlay]
+		\pgfmathsetmacro{\spacing}{0.8}
+		\pgfmathsetmacro{\nlines}{26}
 		\foreach \i in {0,1,...,\nlines}{
-			\draw[gray] ([xshift=\i*\spacing cm]TL) -- ([xshift=\i*\spacing cm]current page.south west);
+			\draw[gray] (\i*\spacing cm, 0cm) -- (\i*\spacing cm, -27.94cm);
 		}
 	\end{tikzpicture}%
 }
+
+
 \newcommand{\makercheck}{
 
 \begin{turn}{90}
