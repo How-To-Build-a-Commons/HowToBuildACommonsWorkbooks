@@ -86,7 +86,7 @@
 \input{MakerCheck.tex}%
 
 \usepackage{multicol}
-
+\usepackage{calc}
 
 \usepackage{atbegshi}
 \AtBeginShipout{\AddCornerImage}
@@ -97,7 +97,7 @@
 	% Add background image
 	\AddToShipoutPictureBG*{%
 		\AtPageLowerLeft{%
-			\includegraphics[width=\paperwidth,height=\paperheight]{src/how-to-consensus-zine/border-edited.png}%
+			\raisebox{5mm}{\includegraphics[width=\paperwidth,height=\dimexpr\paperheight-10mm\relax]{src/how-to-consensus-zine/mucha.png}}%
 		}%
 	}
 	
