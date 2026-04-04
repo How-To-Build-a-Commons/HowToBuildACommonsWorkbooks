@@ -2,6 +2,7 @@
 \newcommand{\AddCornerImage}{%
 	\AddToShipoutPictureBG{%
 		\ifnum\value{page}>1 % Only add corners if page number > 1
+		\ifnum\value{page}<12
 		% === Bottom Corner ===
 		\AtPageLowerLeft{%
 			\ifodd\value{page}
@@ -30,6 +31,7 @@
 			}%
 			\fi
 		}%
+		\fi % End of page number check
 		\fi % End of page number check
 	}%
 }
