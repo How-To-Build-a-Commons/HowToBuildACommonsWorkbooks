@@ -42,7 +42,8 @@ jobs:
           
       - name: Replace version in LaTeX file
         run: sed -i 's/VERSIONNUMBER/${{ github.ref_name }}/g' ScopeSequencing.tex
-        
+      - name: Replace version in LaTeX file
+        run: sed -i 's/VERSIONNUMBER/${{ github.ref_name }}/g' read.tex        
       - name: Generate PDF
         run: pdflatex -jobname=HowToBuildACommons-${{ github.ref_name }} ScopeSequencing.tex
         
